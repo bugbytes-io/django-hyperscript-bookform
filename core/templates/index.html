@@ -2,6 +2,20 @@
 
 {% block content %}
 
-Hello
+<div class="m-12 md:w-[50%]">
+
+  
+  <button 
+    id="add-book-button"
+    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4"
+    _="on click remove .hidden from #add-book-form then add .hidden to me">
+    New Book
+  </button>
+
+  {% include 'partials/bookform.html' %}
+
+  {% include 'partials/booklist.html' %}
+</div>
+
 
 {% endblock %}

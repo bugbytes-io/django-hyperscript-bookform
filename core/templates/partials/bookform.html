@@ -1,0 +1,31 @@
+{% load widget_tweaks %}
+<div id="add-book-form" {% if not form.errors %} class="hidden" {% endif %}>
+
+    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" hx-post="{% url 'index' %}" hx-target="#add-book-form" hx-swap="outerHTML"
+            _="on bookAdded remove .hidden from #add-book-button">
+
+      <div class="mb-4">
+        {{ form.name|add_label_class:"block text-gray-700 text-sm font-bold mb-2" }}
+        {% render_field form.name class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %}
+        {{ form.name.errors }}
+    </div>
+
+      <div class="mb-4">
+        {{ form.author|add_label_class:"block text-gray-700 text-sm font-bold mb-2" }}
+        {% render_field form.author class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %}
+        {{ form.author.errors }}
+    </div>
+
+      <div class="flex justify-end">
+        <button type="button" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-4 mr-2"
+            _="on click add .hidden to #add-book-form then remove .hidden from #add-book-button then put '' into <input />'s value">Cancel</button>
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">Add Book</button>
+      </div>
+    </form>
+
+  </div>
+
+
+  {% if new_book %}
+    <li h>{{ new_book.name }}</li>
+  {% endif %}
