@@ -39,7 +39,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'userform_project.urls'
+ROOT_URLCONF = 'bookform_project.urls'
 
 TEMPLATES = [
     {
@@ -57,7 +57,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'userform_project.wsgi.application'
+WSGI_APPLICATION = 'bookform_project.wsgi.application'
 
 
 # Database
