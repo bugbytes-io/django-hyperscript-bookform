@@ -10,5 +10,5 @@ class BookForm(forms.ModelForm):
     def clean_name(self):
         name = self.cleaned_data['name']
         if name.startswith("a"):
-            raise forms.ValidationError("Error: We don't want people who's names start with 'a'!")
+            raise forms.ValidationError("Error: We don't want people whose names start with 'a'!")
         return name
